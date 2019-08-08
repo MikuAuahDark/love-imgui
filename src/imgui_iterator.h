@@ -1754,6 +1754,13 @@ CALL_FUNCTION(IsItemHovered, bool, flags)
 PUSH_BOOL(ret)
 PUSH_LAST_BOOL(ret)
 END_IMGUI_FUNC
+//    IMGUI_API bool          IsItemDeactivated(ImGuiHoveredFlags flags = 0);                         // is the last item hovered? (and usable, aka not blocked by a popup, etc.). See ImGuiHoveredFlags for more options.
+IMGUI_FUNCTION(IsItemDeactivated)
+OPTIONAL_ENUM_ARG(flags, 0)
+CALL_FUNCTION(IsItemDeactivated, bool)
+PUSH_BOOL(ret)
+PUSH_LAST_BOOL(ret)
+END_IMGUI_FUNC
 //    IMGUI_API bool          IsItemActive();                                                     // is the last item active? (e.g. button being held, text field being edited- items that don't interact will always return false)
 IMGUI_FUNCTION(IsItemActive)
 CALL_FUNCTION(IsItemActive, bool)
