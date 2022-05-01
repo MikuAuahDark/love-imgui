@@ -199,15 +199,16 @@ bool Init(lua_State *L)
 
 	io.Fonts->TexID = NULL;
 
-	luaL_dostring(L, "love.filesystem.createDirectory('/') return love.filesystem.getSaveDirectory()");
-	const char *path = luaL_checkstring(L, 1);
-	g_iniPath = std::string(path) + std::string("/imgui.ini");
-	io.IniFilename = g_iniPath.c_str();
+	io.IniFilename = NULL;
+	g_iniPath = std::string("imgui.ini");
+	ImGui::LoadIniSettingsFromDisk(g_iniPath.c_str());
+
 	return true;
 }
 
 void ShutDown()
 {
+	ImGui::SaveIniSettingsToDisk(g_iniPath.c_str());
 	ImGui::DestroyContext();
 }
 
