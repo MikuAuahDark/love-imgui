@@ -25,7 +25,7 @@ imgui.Begin("Test Window", true, "ImGuiWindowFlags_AlwaysAutoResize");
 
 It uses imgui 1.73 and is based on LÖVE 11.1.
 
-## Getting Started
+## Getting Started 
 
 Build the project using CMake:
 
